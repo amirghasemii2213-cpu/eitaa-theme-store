@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تم‌خونه | فروشگاه تم ایتا</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#080610;
+  color:#fff;
+}
+button,input{font-family:inherit}
+button{cursor:pointer}
+:root{
+  --purple:#9b39ff;
+  --orange:#ff9d19;
+  --card:#171122;
+}
+header{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:30px 18px 25px;
+  background:radial-gradient(circle at top,#54209b,#10091d 65%);
+  border-bottom:2px solid #6729a9;
+}
+.logo{
+  font-size:60px;
+  margin-bottom:5px;
+  filter:drop-shadow(0 0 15px #ff9d19);
+}
+header h1{
+  margin:5px 0;
+  font-size:36px;
+  color:#fff;
+  text-shadow:0 0 15px #9b39ff;
+}
+header h1 span{color:var(--orange)}
+header p{color:#e6d5ff;margin:12px 0}
+.slogan{
+  display:inline-block;
+  border:1px solid #a34cff;
+  border-radius:30px;
+  padding:10px 20px;
+  background:#1b1029;
+  color:#ffd7ff;
+}
+.search{
+  padding:18px;
+}
+.search input{
+  width:100%;
+  border:1px solid #8d48d8;
+  border-radius:30px;
+  padding:15px 18px;
+  background:#171022;
+  color:white;
+  font-size:15px;
+  outline:none;
+}
+.search input:focus{
+  box-shadow:0 0 15px #862bdb;
+}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:5px 18px 15px;
+}
+.section-title h2{font-size:19px;margin:0}
+.section-title span{color:#ffbd4a}
+.categories{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:0 14px;
+}
+.category{
+  min-height:145px;
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid #a05aff;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:linear-gradient(135deg,#26134b,#10101c);
+  box-shadow:0 0 12px #41116b55;
+  transition:.2s;
+}
+.category:active{transform:scale(.97)}
+.category .emoji{
+  font-size:48px;
+  text-shadow:0 0 15px #fff;
+}
+.category h3{margin:5px 0;font-size:17px}
+.category p{margin:0;color:#d9c2f5;font-size:12px}
+.boys{background:linear-gradient(135deg,#063d91,#10152c)}
+.girls{background:linear-gradient(135deg,#9e237d,#32113c)}
+.religion{background:linear-gradient(135deg,#075b5b,#102b34)}
+.nature{background:linear-gradient(135deg,#126345,#102b23)}
+.fantasy{background:linear-gradient(135deg,#6120a5,#20103d)}
+.couple{background:linear-gradient(135deg,#a32667,#32112f)}
+.custom{background:linear-gradient(135deg,#4c1b88,#1c1036)}
+.premium{
+  background:linear-gradient(135deg,#5a3300,#17100a);
+  border:1px solid #ffb52e;
+  box-shadow:0 0 16px #ff9d1940;
+}
+.premium .emoji{color:#ffc34a}
+.corner{
+  position:absolute;
+  top:12px;
+  left:-27px;
+  transform:rotate(-45deg);
+  background:var(--orange);
+  color:#241300;
+  font-size:10px;
+  font-weight:bold;
+  padding:5px 30px;
+}
+.arrow{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  background:#9b39ff;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+}
+.themes{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:0 14px;
+}
+.theme{
+  border:1px solid #38284d;
+  background:#15101e;
+  border-radius:17px;
+  overflow:hidden;
+}
+.theme-art{
+  height:145px;
+  display:grid;
+  place-items:center;
+  font-size:55px;
+  background:linear-gradient(135deg,#25204a,#10101b);
+}
+.theme-info{padding:12px}
+.theme-info h3{font-size:14px;margin:0 0 8px}
+.theme-info p{font-size:12px;color:#c7b7d9;margin:0}
+.theme-info button{
+  width:100%;
+  margin-top:12px;
+  padding:10px;
+  border:0;
+  border-radius:10px;
+  background:linear-gradient(90deg,#7828d6,#a43bff);
+  color:white;
+}
+.price{color:#ffc45c!important}
+.free{color:#71e6a4!important}
+.custom-box{
+  margin:22px 14px;
+  padding:20px;
+  text-align:center;
+  border:1px solid #9b39ff;
+  border-radius:20px;
+  background:linear-gradient(135deg,#291044,#11101b);
+}
+.custom-box .emoji{font-size:45px}
+.custom-box h2{margin:8px 0}
+.custom-box p{font-size:13px;color:#d6c2e8}
+.custom-box button{
+  border:0;border-radius:25px;
+  padding:12px 25px;
+  color:white;background:#8d32e8;
+}
+nav{
+  position:sticky;
+  bottom:0;
+  display:flex;
+  justify-content:space-around;
+  background:#100b19ee;
+  border-top:1px solid #39254e;
+  padding:12px 4px;
+  backdrop-filter:blur(10px);
+}
+nav button{
+  border:0;background:none;color:#c9b8df;
+  font-size:11px;
+}
+nav button span{display:block;font-size:22px;margin-bottom:5px}
+nav button.active{color:#bd73ff}
+footer{
+  text-align:center;
+  color:#88799b;
+  font-size:12px;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🏡👑</div>
+  <h1>تم<span>‌</span>خونه</h1>
+  <p>خونه‌ی تم‌های خاص ایتا ❤️</p>
+  <div class="slogan">ایتا رو به سلیقه خودت بچین!</div>
+</header>
+
+<div class="search">
+  <input id="search" placeholder="🔍 جستجوی تم مورد نظر..." oninput="searchItems()">
+</div>
+
+<div class="section-title">
+  <h2>🎨 دسته‌بندی تم‌ها</h2>
+  <span>همه تم‌ها ←</span>
+</div>
+
+<div class="categories">
+
+  <div class="category boys" onclick="showCategory('پسرانه')">
+    <div class="emoji">🧢</div>
+    <h3>تم پسرانه</h3>
+    <p>خاص و جذاب</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category girls" onclick="showCategory('دخترانه')">
+    <div class="emoji">🎀</div>
+    <h3>تم دخترانه</h3>
+    <p>لطیف و فانتزی</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category religion" onclick="showCategory('مذهبی')">
+    <div class="emoji">🕌</div>
+    <h3>تم مذهبی</h3>
+    <p>با حال و معنوی</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category nature" onclick="showCategory('طبیعت')">
+    <div class="emoji">🏞️</div>
+    <h3>تم طبیعت</h3>
+    <p>آرامش در دل طبیعت</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category fantasy" onclick="showCategory('فانتزی')">
+    <div class="emoji">🦋</div>
+    <h3>تم فانتزی</h3>
+    <p>دنیای خیال و رویا</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category couple" onclick="showCategory('کاپلی')">
+    <div class="emoji">🐱💕</div>
+    <h3>تم کاپلی</h3>
+    <p>برای عاشقان</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category custom" onclick="customTheme()">
+    <div class="emoji">🪄</div>
+    <h3>ساخت تم به سلیقه شما</h3>
+    <p>طرح دلخواهت رو بساز!</p>
+    <span class="arrow">‹</span>
+  </div>
+
+  <div class="category premium" onclick="showCategory('ویژه')">
+    <div class="corner">غیررایگان</div>
+    <div class="emoji">👑</div>
+    <h3>تم‌های ویژه</h3>
+    <p>تم‌های خاص و حرفه‌ای</p>
+    <span class="arrow">‹</span>
+  </div>
+
+</div>
+
+<div class="section-title" style="margin-top:25px">
+  <h2>⭐ جدیدترین تم‌ها</h2>
+  <span onclick="showAll()">مشاهده همه</span>
+</div>
+
+<div class="themes" id="themeList">
+
+  <div class="theme" data-name="تم گرگ تنها" data-category="پسرانه">
+    <div class="theme-art">🐺🌕</div>
+    <div class="theme-info">
+      <h3>تم گرگ تنها</h3>
+      <p class="free">رایگان</p>
+      <button onclick="downloadTheme('تم گرگ تنها')">دریافت تم</button>
+    </div>
+  </div>
+
+  <div class="theme" data-name="تم ژاپنی" data-category="طبیعت">
+    <div class="theme-art">🌸🏯</div>
+    <div class="theme-info">
+      <h3>تم ژاپنی</h3>
+      <p class="free">رایگان</p>
+      <button onclick="downloadTheme('تم ژاپنی')">دریافت تم</button>
+    </div>
+  </div>
+
+  <div class="theme" data-name="تم نئون" data-category="فانتزی">
+    <div class="theme-art">👑💜</div>
+    <div class="theme-info">
+      <h3>تم نئون</h3>
+      <p class="price">غیررایگان</p>
+      <button onclick="buyTheme('تم نئون')">خرید تم</button>
+    </div>
+  </div>
+
+  <div class="theme" data-name="تم آرامش" data-category="طبیعت">
+    <div class="theme-art">🌅🏞️</div>
+    <div class="theme-info">
+      <h3>تم آرامش</h3>
+      <p class="free">رایگان</p>
+      <button onclick="downloadTheme('تم آرامش')">دریافت تم</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="custom-box">
+  <div class="emoji">🪄✨</div>
+  <h2>تم دلخواه خودت رو بساز!</h2>
+  <p>تم اختصاصی خودت رو سفارش بده و متفاوت باش.</p>
+  <button onclick="customTheme()">ثبت سفارش تم سفارشی</button>
+</div>
+
+<footer>
+  تم‌خونه ❤️ خونه‌ی تم‌های خاص ایتا
+</footer>
+
+<nav>
+  <button class="active"><span>🏠</span>خانه</button>
+  <button onclick="favorites()"><span>♡</span>علاقه‌مندی‌ها</button>
+  <button onclick="alert('بخش تخفیف‌ها به‌زودی')"><span>🎁</span>تخفیف‌ها</button>
+  <button onclick="alert('پروفایل به‌زودی فعال می‌شود')"><span>👤</span>پروفایل</button>
+  <button onclick="alert('برای ارتباط با ما، بعداً آیدی اضافه می‌کنیم')"><span>➤</span>تماس با ما</button>
+</nav>
+
+<script>
+function searchItems(){
+  const q=document.getElementById('search').value.trim();
+  document.querySelectorAll('.theme').forEach(item=>{
+    item.style.display=item.innerText.includes(q)?'block':'none';
+  });
+}
+
+function showCategory(category){
+  document.querySelectorAll('.theme').forEach(item=>{
+    item.style.display=item.dataset.category===category?'block':'none';
+  });
+  document.getElementById('themeList').scrollIntoView({behavior:'smooth'});
+}
+
+function showAll(){
+  document.querySelectorAll('.theme').forEach(item=>{
+    item.style.display='block';
+  });
+}
+
+function downloadTheme(name){
+  alert('فایل دانلود '+name+' هنوز به فروشگاه اضافه نشده است.');
+}
+
+function buyTheme(name){
+  alert('پرداخت '+name+' در مرحله بعد راه‌اندازی می‌شود.');
+}
+
+function customTheme(){
+  alert('فرم سفارش تم سفارشی را در مرحله بعد اضافه می‌کنیم.');
+}
+
+function favorites(){
+  alert('بخش علاقه‌مندی‌ها در مرحله بعد فعال می‌شود.');
+}
+</script>
+
+</body>
+</html>
